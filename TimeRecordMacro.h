@@ -11,12 +11,10 @@ std::string  front;\
 double elapsed 
 
 #define __TIME_REC_INIT_LOGFILE__(str)				\
-std::chrono::system_clock::time_point	start, end;	\
-std::string  front;\
-double elapsed; \
+__TIME_REC_INIT__()				\
 std::ofstream log(str,std::ios::app);\
 
-#define __TIME_REC_INIT_LOGFILE_HEADER__(str,header)				\
+#define __TIME_REC_INIT_LOGFILE_WITH_HEADER__(str,header)				\
 __TIME_REC_INIT_LOGFILE__(str);\
 log << header <<std::endl; 
 
